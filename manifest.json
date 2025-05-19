@@ -2,23 +2,22 @@
     "manifest_version": 3,
     "name": "LinkedIn Job Scraper",
     "version": "1.0",
-    "description": "Scrapes LinkedIn post data.",
+    "description": "Scrapes job listings from LinkedIn jobs page",
     "permissions": [
-        "scripting",
-        "activeTab"
+        "activeTab",
+        "scripting"
     ],
-    "host_permissions": [
-        "*://www.linkedin.com/jobs/*"
-    ],
+    "action": {
+        "default_title": "LinkedIn Job Scraper"
+    },
     "content_scripts": [
         {
             "matches": [
-                "*://www.linkedin.com/jobs/*"
+                "*://*.linkedin.com/jobs/*"
             ],
             "js": [
                 "content.js"
-            ],
-            "run_at": "document_idle"
+            ]
         }
     ]
 }
